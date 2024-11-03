@@ -1,0 +1,1374 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('background.png') no-repeat center center;
+    overflow:hidden;
+    
+}
+.tong {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 100px #FFC0CB;
+    padding: 50px; /* Giảm giá trị padding */
+    text-align: center;
+    width: 1200px;
+    height: 700px;
+    margin-bottom: 20px;
+    margin-top: 20px; /* Thêm khoảng cách từ phía trên */
+    overflow: hidden; /* Đảm bảo thuộc tính này được thêm vào */
+    display: flex;
+    flex-direction: row;
+}
+
+.tong {
+    overflow: visible; /* Đảm bảo rằng phần tử cha không cắt bớt phần tử con */
+    padding: 20px;
+}
+.time, .date {
+    color: #080808;
+    position: absolute;
+    right: 180px;
+}
+#btn-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.trai {
+    padding: 10px; /* Giảm độ rộng của padding */
+    border-radius: 10px; /* Bo tròn các góc của lớp bao */
+   
+    position: relative;
+    left: -10px;
+    top: 70px;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 200px; /* Đặt chiều rộng cố định cho các nút */
+    height: 60px; /* Đặt chiều cao cố định cho các nút */
+    margin-bottom: 25px;
+    box-sizing: border-box; /* Đảm bảo padding và border không làm thay đổi kích thước */
+    border-radius: 10px; /* Bo tròn các góc */
+    padding: 10px; /* Thêm padding để nội dung không sát viền */
+    background-color: white; /* Đặt màu nền trắng */
+    border: 1px solid gray; /* Đặt viền xám */
+}
+
+.nav-btn img {
+    margin-right: 10px;
+}
+
+.trai img {
+    margin-right: 25px;
+    width: 30px; /* Adjust image size as desired */
+    height: auto;
+ }
+ #dash {  
+    margin-left: 11px;
+} 
+
+#bed {
+    margin-left: 7px;
+ }
+
+ #liv {
+    margin-left: 7px;
+ }
+
+ #kid {
+    margin-left: 7px;
+ }
+
+
+.nav-btn span {
+    font-size: 16px;
+}
+#btn-box button:hover {
+    background-color: #f3aac6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hiệu ứng nút đang được chọn */
+#btn-box button.active {
+    background-color: #f3aac6; /* Màu xanh giữ khi nút được chọn */
+    transform: translateY(0); /* Giữ vị trí */
+    box-shadow: none; /* Không đổ bóng cho nút được chọn */
+}
+
+.time {
+    top: 35px;
+    font-size: 20px;
+}
+
+.date {
+    top: 65px;
+    font-size: 15px;
+}
+
+.caonhat{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+}
+.caonhat h2{
+    margin-right: 10px;
+    font-size: 50px;
+    position: absolute;
+    top: -10px;
+    left : 180px;
+    
+}
+.caonhat span{
+    font-size: 30px;
+    position: absolute;
+    top: 45px;
+    left: 260px;
+    color: #4b4949;
+
+}
+.bongden:hover, .okhoa:hover, .dammay:hover, .nhietke:hover {
+    border-bottom: 3px solid rgb(246, 139, 246); /* Đường viền màu tím */
+    padding-bottom: 5px; /* Đảm bảo khoảng cách giữa icon và đường viền */
+
+}
+.divider {
+    width: 76vw; /* Chiều rộng toàn màn hình */
+    border: none;
+    border-top: 2px solid #ccc; /* Đường gạch dưới */
+    margin: 0; /* Không có khoảng cách trên và dưới thanh ngang */
+    position: absolute;
+    top: 90px; /* Điều chỉnh vị trí theo nhu cầu */
+    right: 180px;
+} 
+.Thanhcao {
+    display: flex;
+    margin-top: 0px;
+    position: absolute;
+    top: 40px;
+    right:350px;
+    gap: 80px;
+} 
+#bongdenn,#okhoaa,#dammayy,#nhietkee{
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    transition: transform 0.3s, color 0.3s;
+}
+
+
+.temperature {
+    font-size: 60px;
+    margin-top: 5px;
+}
+.settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 10px;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    width: 105px;
+    position: absolute;
+    top: 120px;
+    right: 180px;
+}
+
+.settings > div {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.fan, .cool, .heat, .auto, .off {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1px;
+    padding: 0;
+    font-size: 12px;
+}
+
+#Fan, #Cool, #Auto, #Heat, #Off {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    transition: transform 0.3s, color 0.3s;
+}
+
+#Fan:hover, #Auto:hover, #Cool:hover, #Heat:hover, #Off:hover {
+    transform: scale(1.2);
+    color: #007BFF;
+}
+.fan {
+    position: relative;
+    display: inline-block;
+}
+
+.fan-options {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.fan-option {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.fan:hover .fan-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fan:hover .fan-option:nth-child(1) {
+    transform: translate(-30px, 0px);
+}
+
+.fan:hover .fan-option:nth-child(2) {
+    transform: translate(-50px, 40px);
+}
+
+.fan:hover .fan-option:nth-child(3) {
+    transform: translate(-120px, -40px);
+}
+.fan-option {
+    padding: 10px; /* Điều chỉnh giá trị này để thay đổi kích thước padding */
+    border-radius: 50%; /* Tạo padding tròn */
+    border: 2px solid #ccc;
+    background-color: #fff;
+    width: 30px; /* Điều chỉnh kích thước hình ảnh */
+    height: 30px; /* Điều chỉnh kích thước hình ảnh */
+  }
+.fan-option:hover {
+    background-color: pink; /* Màu hồng khi di chuột vào */
+}
+
+  
+
+
+.common-padding {
+    padding: 20px;
+}
+.container{
+    padding: 30px 345px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    width: 105px;
+    height: 550px;
+    position: relative;
+    top: 70px; /* Điều chỉnh giá trị này */
+    right: 0px; /* Điều chỉnh giá trị này */
+}
+.gauge-container {
+    position: relative;
+    right: 100px; /* Điều chỉnh giá trị này */
+    top: 0px;  /* Điều chỉnh giá trị này */
+    text-align: center;
+}
+.gauge-container img {
+    cursor: pointer;
+}
+.bongden1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: -470px;
+    top:70px;
+    font-size: 10px;
+}
+#lightbulb1 {
+    margin-bottom: 5px; /* Điều chỉnh khoảng cách giữa icon và chữ */
+    width: 30px; /* Điều chỉnh kích thước theo ý muốn */
+    height: auto;
+}
+.bongden2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: -470px;
+    top: 120px;
+    font-size: 10px;
+}
+#lightbulb2 {
+    margin-bottom: 5px; /* Điều chỉnh khoảng cách giữa icon và chữ */
+    width: 30px; /* Điều chỉnh kích thước theo ý muốn */
+    height: auto;
+}
+.bongden3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: -370px;
+    top: 230px;
+    font-size: 10px;
+}
+#lightbulb3 {
+    margin-bottom: 5px; /* Điều chỉnh khoảng cách giữa icon và chữ */
+    width: 20px; /* Điều chỉnh kích thước theo ý muốn */
+    height: auto;
+}
+.bongden4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: -220px;
+    top:-30px;
+    font-size: 10px;
+}
+#lightbulb4 {
+    margin-bottom: 5px; /* Điều chỉnh khoảng cách giữa icon và chữ */
+    width: 30px; /* Điều chỉnh kích thước theo ý muốn */
+    height: auto;
+}
+.bongden5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: -470px;
+    top:82px;
+    font-size: 9px;
+}
+#lightbulb5 {
+    margin-bottom: 5px; /* Điều chỉnh khoảng cách giữa icon và chữ */
+    width: 20px; /* Điều chỉnh kích thước theo ý muốn */
+    height: auto;
+}
+.bongden6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: -150px;
+    top:70px;
+    font-size: 10px;
+}
+#lightbulb6{
+    margin-bottom: 5px; /* Điều chỉnh khoảng cách giữa icon và chữ */
+    width: 30px; /* Điều chỉnh kích thước theo ý muốn */
+    height: auto;
+}
+.bongden7 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: -150px;
+    top: -70px;
+    font-size: 10px;
+}
+#lightbulb7 {
+    margin-bottom: 5px; /* Điều chỉnh khoảng cách giữa icon và chữ */
+    width: 30px; /* Điều chỉnh kích thước theo ý muốn */
+    height: auto;
+}
+
+.custom-line1 {
+    width: 400px; /* Độ rộng của đường thẳng */
+    border: 0.1px solid #ccc; /* Màu và độ dày của đường thẳng */
+    position: absolute; /* Định vị tuyệt đối */
+    top: 350px; /* Khoảng cách từ trên xuống */
+    right: 300px; /* Khoảng cách từ trái sang */
+}
+.custom-line2{
+    width: 0.1px; /* Độ rộng của đường thẳng */
+    height: 300px;
+    border: 0.1px solid #ccc; /* Màu và độ dày của đường thẳng */
+    position: absolute; /* Định vị tuyệt đối */
+    top: 50px; /* Khoảng cách từ trên xuống */
+    right: 700px; /* Khoảng cách từ trái sang */
+}
+.custom-line3{
+    width: 0.1px; 
+    height: 170px;
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 180px;
+    right: 300px; 
+}
+.custom-line4{
+    width: 90px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 50px;
+    right: 370px; 
+}
+.custom-line5{
+    width: 0.1px;
+    height: 50px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 0px;
+    right: 400px; 
+}
+.custom-line6{
+    width: 150px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 0px;
+    right: 400px; 
+}
+.custom-line7{
+    width: 50px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 50px;
+    right: 390px; 
+}
+.custom-line8{
+    width: 200px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 50px;
+    right: 500px; 
+}
+.custom-line9{ /*ngang*/
+    width: 100px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 250px;
+    right: 300px; 
+}
+.custom-line10{
+    width: 0.1px;
+    height: 20px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 250px;
+    right: 420px; 
+}
+.custom-line11{
+    width: 0.1px;
+    height: 30px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 290px;
+    right: 420px; 
+}
+.custom-line12{ /*ngang*/
+    width: 70px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 320px;
+    right: 420px; 
+}
+.custom-line13{
+    height: 30px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 320px;
+    right: 490px; 
+}
+.custom-line14{
+    height: 40px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 250px;
+    right: 490px; 
+}
+.custom-line15{ /*ngang*/
+    width: 210px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 250px;
+    right: 490px; 
+}
+.custom-line16{ /*ngang*/
+    width: 70px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 300px;
+    right: 630px; 
+}
+.custom-line17{
+    height: 50px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 250px;
+    right: 630px; 
+}
+.custom-line18{ /*ngang*/
+    width: 100px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 120px;
+    right: 600px; 
+}
+.custom-line19{
+    height: 70px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 180px;
+    right: 540px; 
+}
+.custom-line20{
+    height: 70px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 80px;
+    right: 600px; 
+}
+.custom-line21{ /*ngang*/
+    width: 120px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 180px;
+    right: 300px; 
+}
+.custom-line22{
+    height: 50px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 180px;
+    right: 420px; 
+}
+.custom-line23{
+    height: 110px; 
+    border: 0.1px solid #ccc; 
+    position: absolute; 
+    top: 50px;
+    right: 370px; 
+}
+.custom-line24{ /*ngang*/
+    width: 40px; 
+    border: 1px solid #ccc; 
+    position: absolute; 
+    top: 48px;
+    right: 460px; 
+}
+.mohinh{
+    position: relative;
+    top: -300px;
+    left: 400px;
+}
+.bongdenden{
+    position: relative;
+    left: -140px;
+}
+.ground h3 {
+    font-size: 15px;
+    margin-bottom: 0px; /* Điều chỉnh khoảng cách dưới chữ "Ground Floor" */
+    position: relative;
+    width: 100%;
+    right: -0px;
+}   
+.ground span{
+    font-size: 10px;
+    margin-top: -20px; /* Điều chỉnh khoảng cách trên chữ "IoT System" */
+
+}
+.ground{ 
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4b4949;
+    position: relative;
+    right: 200px;
+    top: -250px;
+}
+#gauge {
+    width: 200px;
+    height: 200px;
+    font-size: 34px;
+    border-radius: 50%;
+    background: conic-gradient(#f3aac6 0% 40%, #f8a3d3 40% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    position: relative;
+    right: -250px;
+    top:80px;
+}
+
+#gauge::before {
+    content: '';
+    width: 160px;
+    height: 160px;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    position: absolute;
+}
+
+#gauge span {
+    position: relative;
+    font-size: 2em;
+}
+
+.label {
+    margin: 20px auto;
+    text-align: center;
+    position: absolute;
+    top: 300px;
+    right: -330px;
+}
+
+.report {
+    margin: 20px auto;
+    color: #007BFF;
+    text-align: center;
+    position: absolute;
+    right: -380px;
+    top: 450px;
+}
+.Heaton{
+    font-size: 25PX;
+    color: #4b4949;
+    text-align: center;
+    position: relative;
+    right: -290px;
+    top : -230px;
+}
+.roomss{
+    font-size: 10PX;
+    color: #514f4f;
+    text-align: center;
+    position: relative;
+    right: -290px;
+    top : -200px;
+}
+/* bedroom */
+
+.device-container1 {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    /* background-image: url('./image/backlivi.jpg'); */
+    background-size: cover;       /*full ảnh */
+    padding: 130px; /* đẩy các thiết bị xuống dưới */
+    gap: 30px; /* Điều chỉnh khoảng cách giữa các phần tử */
+    left:10px;       
+    position: relative;
+    
+    
+ 
+}
+ 
+ /* Individual device styling */
+.device1 {
+   /* background-color: white; */
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 2px 5px rgba(221, 217, 217, 0.3);
+   text-align: center;
+   background-color: rgba(177, 167, 167, 0.1) /* Nền trắng với độ trong suốt 50% */
+ 
+}
+ 
+ 
+ /* Device image styling */
+.device1 img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 80px; /* Điều chỉnh kích thước hình ảnh */
+   height: 70px;
+   margin-bottom: 20px;
+   
+}
+ 
+ /* Device button styling */
+.device1 button {
+    display: inline-block;
+    margin: 10px;
+    padding: 7px 13px;
+    font-size: 13px;
+    border: none;
+    background-color: rgba(177, 167, 167, 0.5);
+    
+    color: rgb(19, 18, 18);
+    cursor: pointer;
+    border-radius: 5px;
+}
+ 
+.device1 button:hover {
+     background-color: #728394;
+}
+.device1 button.active {
+     background:  #728394;
+}
+ 
+ 
+ /* Device title styling */
+.device1 h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    color:rgb(147, 179, 179);
+}
+.sensorbed {
+    justify-content: space-around; /* Adjusts spacing between elements */
+    align-items: center; /* Vertically aligns items if they have different heights */
+}
+.sensorbed {
+    justify-content: space-around; /* Adjusts spacing between elements */
+    align-items: center; /* Vertically aligns items if they have different heights */
+}
+.thongsobed h2 {    /*  chỉnh vị trí của sensor nd */
+     position: relative;
+     left: 2px;
+     bottom: 615px;
+     padding: 10px;
+     font-size: 17px;
+     color:rgb(147, 179, 179);
+}
+.thongsobed h3 {    /*  chỉnh vị trí của sensor da */
+     position: relative;
+     left: 215px;
+     bottom: 730px;
+     padding: 10px;
+     font-size: 17px;
+     color:rgb(147, 179, 179);
+}
+.thongsobed h4 {    /*  chỉnh vị trí của sensor clkk */
+    position: relative;
+    left: 450px; 
+    bottom: 855px;
+    padding: 10px;
+    font-size: 17px;
+    color:rgb(147, 179, 179);
+}
+.thongsobed img {
+    width: 40px;
+    height: 40px;
+    bottom: 400px;
+    left: 20px;
+    position: relative;
+    
+ 
+}
+#nd1 {
+    bottom: 590px;
+    left: 10px;
+}
+#da1 {
+    bottom: 700px;
+    left: 210px;
+}
+#cl1 {
+    bottom: 820px;
+    left: 440px;
+}
+
+/* livingroom */
+
+.device-container2 {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    /* background-image: url('./image/backlivi.jpg'); */
+    background-size: cover;       /*full ảnh */
+    padding: 130px; /* đẩy các thiết bị xuống dưới */
+    gap: 30px; /* Điều chỉnh khoảng cách giữa các phần tử */
+    left:10px;       
+    position: relative;
+    
+    
+ 
+}
+ 
+ /* Individual device styling */
+.device2 {
+   /* background-color: white; */
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 2px 5px rgba(221, 217, 217, 0.3);
+   text-align: center;
+   background-color: rgba(177, 167, 167, 0.1) /* Nền trắng với độ trong suốt 50% */
+ 
+}
+ 
+ 
+ /* Device image styling */
+.device2 img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 80px; /* Điều chỉnh kích thước hình ảnh */
+   height: 70px;
+   margin-bottom: 20px;
+   
+}
+ 
+ /* Device button styling */
+.device2 button {
+    display: inline-block;
+    margin: 10px;
+    padding: 7px 13px;
+    font-size: 13px;
+    border: none;
+    background-color: rgba(177, 167, 167, 0.5);
+    
+    color: rgb(19, 18, 18);
+    cursor: pointer;
+    border-radius: 5px;
+}
+ 
+.device2 button:hover {
+     background-color: #728394;
+}
+.device2 button.active {
+     background:  #728394;
+}
+ 
+ 
+ /* Device title styling */
+.device2 h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    color:rgb(147, 179, 179);
+}
+.sensorliv {
+    justify-content: space-around; /* Adjusts spacing between elements */
+    align-items: center; /* Vertically aligns items if they have different heights */
+}
+.sensorliv {
+    justify-content: space-around; /* Adjusts spacing between elements */
+    align-items: center; /* Vertically aligns items if they have different heights */
+}
+.thongsoliv h2 {    /*  chỉnh vị trí của sensor nd */
+     position: relative;
+     left: 2px;
+     bottom: 615px;
+     padding: 10px;
+     font-size: 17px;
+     color:rgb(147, 179, 179);
+}
+.thongsoliv h3 {    /*  chỉnh vị trí của sensor da */
+     position: relative;
+     left: 215px;
+     bottom: 730px;
+     padding: 10px;
+     font-size: 17px;
+     color:rgb(147, 179, 179);
+}
+.thongsoliv h4 {    /*  chỉnh vị trí của sensor clkk */
+    position: relative;
+    left: 450px; 
+    bottom: 855px;
+    padding: 10px;
+    font-size: 17px;
+    color:rgb(147, 179, 179);
+}
+.thongsoliv img {
+    width: 40px;
+    height: 40px;
+    bottom: 400px;
+    left: 20px;
+    position: relative;
+    
+ 
+}
+#nd2 {
+    bottom: 590px;
+    left: 10px;
+}
+#da2 {
+    bottom: 700px;
+    left: 210px;
+}
+#cl2 {
+    bottom: 820px;
+    left: 440px;
+}
+  
+/* Kitchen */
+
+.device-container3 {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    /* background-image: url('./image/backlivi.jpg'); */
+    background-size: cover;       /*full ảnh */
+    padding: 130px; /* đẩy các thiết bị xuống dưới */
+    gap: 30px; /* Điều chỉnh khoảng cách giữa các phần tử */
+    left:10px;       
+    position: relative;
+    
+    
+ 
+}
+ 
+ /* Individual device styling */
+  .device3 {
+   /* background-color: white; */
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 2px 5px rgba(221, 217, 217, 0.3);
+   text-align: center;
+   background-color: rgba(177, 167, 167, 0.1) /* Nền trắng với độ trong suốt 50% */
+ 
+}
+ 
+ 
+ /* Device image styling */
+.device3 img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 80px; /* Điều chỉnh kích thước hình ảnh */
+   height: 70px;
+   margin-bottom: 20px;
+   
+}
+ 
+ /* Device button styling */
+.device3 button {
+    display: inline-block;
+    margin: 10px;
+    padding: 7px 13px;
+    font-size: 13px;
+    border: none;
+    background-color: rgba(177, 167, 167, 0.5);
+    
+    color: rgb(19, 18, 18);
+    cursor: pointer;
+    border-radius: 5px;
+}
+ 
+.device3 button:hover {
+     background-color: #728394;
+}
+.device3 button.active {
+     background:  #728394;
+}
+ 
+ 
+ /* Device title styling */
+.device3 h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    color:rgb(147, 179, 179);
+}
+.sensorkit {
+    justify-content: space-around; /* Adjusts spacing between elements */
+    align-items: center; /* Vertically aligns items if they have different heights */
+}
+.sensorkit {
+    justify-content: space-around; /* Adjusts spacing between elements */
+    align-items: center; /* Vertically aligns items if they have different heights */
+}
+.thongsokit h2 {    /*  chỉnh vị trí của sensor nd */
+     position: relative;
+     left: 2px;
+     bottom: 615px;
+     padding: 10px;
+     font-size: 17px;
+     color:rgb(147, 179, 179);
+}
+.thongsokit h3 {    /*  chỉnh vị trí của sensor da */
+     position: relative;
+     left: 215px;
+     bottom: 730px;
+     padding: 10px;
+     font-size: 17px;
+     color:rgb(147, 179, 179);
+}
+.thongsokit h4 {    /*  chỉnh vị trí của sensor clkk */
+    position: relative;
+    left: 450px; 
+    bottom: 855px;
+    padding: 10px;
+    font-size: 17px;
+    color:rgb(147, 179, 179);
+}
+.thongsokit img {
+    width: 40px;
+    height: 40px;
+    bottom: 400px;
+    left: 20px;
+    position: relative;
+    
+ 
+}
+#nd3 {
+    bottom: 590px;
+    left: 10px;
+}
+#da3 {
+    bottom: 700px;
+    left: 210px;
+}
+#cl3 {
+    bottom: 820px;
+    left: 440px;
+}
+
+  /* office */
+.device-container4 {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    /* background-image: url('./image/backlivi.jpg'); */
+    background-size: cover;       /*full ảnh */
+    padding: 130px; /* đẩy các thiết bị xuống dưới */
+    gap: 30px; /* Điều chỉnh khoảng cách giữa các phần tử */
+    left:10px;       
+    position: relative;
+    
+    
+ 
+}
+ 
+ /* Individual device styling */
+.device4 {
+   /* background-color: white; */
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 2px 5px rgba(221, 217, 217, 0.3);
+   text-align: center;
+   background-color: rgba(177, 167, 167, 0.1) /* Nền trắng với độ trong suốt 50% */
+ 
+}
+ 
+ 
+ /* Device image styling */
+.device4 img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 80px; /* Điều chỉnh kích thước hình ảnh */
+   height: 70px;
+   margin-bottom: 20px;
+   
+}
+ 
+ /* Device button styling */
+.device4 button {
+    display: inline-block;
+    margin: 10px;
+    padding: 7px 13px;
+    font-size: 13px;
+    border: none;
+    background-color: rgba(177, 167, 167, 0.5);
+    
+    color: rgb(19, 18, 18);
+    cursor: pointer;
+    border-radius: 5px;
+}
+ 
+.device4 button:hover {
+     background-color: #728394;
+}
+.device4 button.active {
+     background:  #728394;
+}
+ 
+ 
+ /* Device title styling */
+.device4 h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    color:rgb(147, 179, 179);   
+}
+.sensoroff {
+    justify-content: space-around; /* Adjusts spacing between elements */
+    align-items: center; /* Vertically aligns items if they have different heights */
+}
+.sensoroff {
+    justify-content: space-around; /* Adjusts spacing between elements */
+    align-items: center; /* Vertically aligns items if they have different heights */
+}
+.thongsooff h2 {    /*  chỉnh vị trí của sensor nd */
+     position: relative;
+     left: 2px;
+     bottom: 615px;
+     padding: 10px;
+     font-size: 17px;
+     color:rgb(147, 179, 179);
+}
+.thongsooff h3 {    /*  chỉnh vị trí của sensor da */
+     position: relative;
+     left: 215px;
+     bottom: 730px;
+     padding: 10px;
+     font-size: 17px;
+     color:rgb(147, 179, 179);
+}
+.thongsooff h4 {    /*  chỉnh vị trí của sensor clkk */
+    position: relative;
+    left: 450px; 
+    bottom: 855px;
+    padding: 10px;
+    font-size: 17px;
+    color:rgb(147, 179, 179);
+}
+.thongsooff img {
+    width: 40px;
+    height: 40px;
+    bottom: 400px;
+    left: 20px;
+    position: relative;
+    
+ 
+}
+#nd4 {
+    bottom: 590px;
+    left: 10px;
+}
+#da4 {
+    bottom: 700px;
+    left: 210px;
+}
+#cl4 {
+    bottom: 820px;
+    left: 440px;
+}
+
+  /* bathroom */
+
+.device-container6 {
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 columns */
+    /* background-image: url('./image/backlivi.jpg'); */
+    background-size: cover;       /*full ảnh */
+    padding: 130px; /* đẩy các thiết bị xuống dưới */
+    gap: 30px; /* Điều chỉnh khoảng cách giữa các phần tử */
+    left:10px;       
+    position: relative;
+    
+    
+ 
+}
+ 
+ /* Individual device styling */
+.device6 {
+   /* background-color: white; */
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 2px 5px rgba(221, 217, 217, 0.3);
+   text-align: center;
+   background-color: rgba(177, 167, 167, 0.1) /* Nền trắng với độ trong suốt 50% */
+ 
+}
+ 
+ 
+ /* Device image styling */
+.device6 img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 80px; /* Điều chỉnh kích thước hình ảnh */
+   height: 70px;
+   margin-bottom: 20px;
+   
+}
+ 
+ /* Device button styling */
+.device6 button {
+    display: inline-block;
+    margin: 10px;
+    padding: 7px 13px;
+    font-size: 13px;
+    border: none;
+    background-color: rgba(177, 167, 167, 0.5);
+    
+    color: rgb(19, 18, 18);
+    cursor: pointer;
+    border-radius: 5px;
+}
+ 
+.device6 button:hover {
+     background-color: #728394;
+}
+.device6 button.active {
+     background:  #728394;
+}
+ 
+ 
+ /* Device title styling */
+.device6 h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    color:rgb(147, 179, 179);
+}
+.sensorbat {
+    justify-content: space-around; /* Adjusts spacing between elements */
+    align-items: center; /* Vertically aligns items if they have different heights */
+}
+.sensorbat {
+    justify-content: space-around; /* Adjusts spacing between elements */
+    align-items: center; /* Vertically aligns items if they have different heights */
+}
+.thongsobat h2 {    /*  chỉnh vị trí của sensor nd */
+     position: relative;
+     left: 2px;
+     bottom: 615px;
+     padding: 10px;
+     font-size: 17px;
+     color:rgb(147, 179, 179);
+}
+.thongsobat h3 {    /*  chỉnh vị trí của sensor da */
+     position: relative;
+     left: 215px;
+     bottom: 730px;
+     padding: 10px;
+     font-size: 17px;
+     color:rgb(147, 179, 179);
+}
+.thongsobat h4 {    /*  chỉnh vị trí của sensor clkk */
+    position: relative;
+    left: 450px; 
+    bottom: 855px;
+    padding: 10px;
+    font-size: 17px;
+    color:rgb(147, 179, 179);
+}
+.thongsobat img {
+    width: 40px;
+    height: 40px;
+    bottom: 400px;
+    left: 20px;
+    position: relative;
+    
+ 
+  }
+#nd6 {
+    bottom: 590px;
+    left: 10px;
+}
+#da6 {
+    bottom: 700px;
+    left: 210px;
+}
+#cl6 {
+    bottom: 820px;
+    left: 440px;
+}
+
+  /* master */
+
+.device-container5 {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    /* background-image: url('./image/backlivi.jpg'); */
+    background-size: cover;       /*full ảnh */
+    padding: 130px; /* đẩy các thiết bị xuống dưới */
+    gap: 30px; /* Điều chỉnh khoảng cách giữa các phần tử */
+    left:10px;       
+    position: relative;
+    
+    
+ 
+}
+ 
+ /* Individual device styling */
+.device5 {
+   /* background-color: white; */
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 2px 5px rgba(221, 217, 217, 0.3);
+   text-align: center;
+   background-color: rgba(177, 167, 167, 0.1) /* Nền trắng với độ trong suốt 50% */
+ 
+}
+ 
+ 
+ /* Device image styling */
+.device5 img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 80px; /* Điều chỉnh kích thước hình ảnh */
+   height: 70px;
+   margin-bottom: 20px;
+   
+}
+ 
+ /* Device button styling */
+.device5 button {
+    display: inline-block;
+    margin: 10px;
+    padding: 7px 13px;
+    font-size: 13px;
+    border: none;
+    background-color: rgba(177, 167, 167, 0.5);
+    
+    color: rgb(19, 18, 18);
+    cursor: pointer;
+    border-radius: 5px;
+}
+ 
+.device5 button:hover {
+     background-color: #728394;
+}
+.device5 button.active {
+     background:  #728394;
+}
+ 
+ 
+ /* Device title styling */
+.device5 h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    color:rgb(147, 179, 179);
+}
+.sensormas {
+    justify-content: space-around; /* Adjusts spacing between elements */
+    align-items: center; /* Vertically aligns items if they have different heights */
+}
+.sensormas {
+    justify-content: space-around; /* Adjusts spacing between elements */
+    align-items: center; /* Vertically aligns items if they have different heights */
+}
+.thongsomas h2 {    /*  chỉnh vị trí của sensor nd */
+     position: relative;
+     left: 2px;
+     bottom: 615px;
+     padding: 10px;
+     font-size: 17px;
+     color:rgb(147, 179, 179);
+}
+.thongsomas h3 {    /*  chỉnh vị trí của sensor da */
+     position: relative;
+     left: 215px;
+     bottom: 730px;
+     padding: 10px;
+     font-size: 17px;
+     color:rgb(147, 179, 179);
+}
+.thongsomas h4 {    /*  chỉnh vị trí của sensor clkk */
+    position: relative;
+    left: 450px; 
+    bottom: 855px;
+    padding: 10px;
+    font-size: 17px;
+    color:rgb(147, 179, 179);
+}
+.thongsomas img {
+    width: 40px;
+    height: 40px;
+    bottom: 400px;
+    left: 20px;
+    position: relative;
+    
+ 
+}
+#nd5 {
+    bottom: 590px;
+    left: 10px;
+}
+#da5 {
+    bottom: 700px;
+    left: 210px;
+}
+#cl5 {
+    bottom: 820px;
+    left: 440px;
+}
+/* Bieu do */

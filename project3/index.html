@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Home</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="function.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body onload="showTab(1)">
+    <div class="tong">
+      <div class="trai" id="btn-box">
+        <button id="btn1" class="nav-btn" onclick="showTab(1, this)">
+          <b
+            ><h5><img src="./image/dash.png" id="dash" />Dashboard</h5></b
+          >
+        </button>
+        <button id="btn3" class="nav-btn" onclick="showTab(3, this)">
+          <b
+            ><h5><img src="./image/bed1.png" id="bed" />Bedroom</h5></b
+          >
+        </button>
+        <button id="btn4" class="nav-btn" onclick="showTab(4, this)">
+          <b
+            ><h5><img src="./image/liv.png" id="liv" />Living room</h5></b
+          >
+        </button>
+        <button id="btn5" class="nav-btn" onclick="showTab(5, this)">
+          <b
+            ><h5><img src="./image/kit.png" id="kit" />Kitchen</h5></b
+          >
+        </button>
+        <button id="btn6" class="nav-btn" onclick="showTab(6, this)">
+          <b
+            ><h5><img src="./image/off.png" id="offi" />Office</h5></b
+          >
+        </button>
+        <button id="btn7" class="nav-btn" onclick="showTab(7, this)">
+          <b
+            ><h5><img src="./image/bat.png" id="bath" />Bathroom</h5></b
+          >
+        </button>
+        <button id="btn8" class="nav-btn" onclick="showTab(8, this)">
+          <b
+            ><h5><img src="./image/master.png" id="master" />Master room</h5></b
+          >
+        </button>
+      </div>
+      <div class="timeanddate">
+        <div class="date"></div>
+        <div class="time"></div>
+      </div>
+      <div class="caonhat">
+        <h2>IoT</h2>
+        <span>Smart Home</span>
+        <hr class="divider" />
+      </div>
+      <div id="content1" class="contenthome content">
+        <div class="tong1">
+          <div class="timeanddate">
+            <div class="date"></div>
+            <div class="time"></div>
+          </div>
+          <div class="Thanhcao">
+            <div class="bongden">
+              <img
+                src="bongdenmo.png"
+                id="bongdenn"
+                onclick="toggleAllLights()"
+              />
+            </div>
+            <div class="okhoa">
+              <img src="okhoa-icon.png" id="okhoaa" onclick="changeImage()" />
+            </div>
+            <div class="dammay">
+              <img src="dammay-icon.png" id="dammayy" />
+            </div>
+            <div class="nhietke">
+              <img src="nhietke-icon.png" id="nhietkee" />
+            </div>
+          </div>
+          <div class="thermostat">
+            <div class="container">
+              <div class="gauge-container">
+                <form>
+                  <h1 id="gauge"><span id="temperature"></span></h1>
+                </form>
+                <div class="Tieude"></div>
+                <div class="Heaton">Heater On</div>
+                <div class="roomss">7 rooms light is disabled</div>
+                <div class="ground">
+                  <h3>Ground Floor</h3>
+                  <span>IoT System</span>
+                </div>
+                <div class="mohinh">
+                  <hr class="custom-line1" />
+                  <hr class="custom-line2" />
+                  <hr class="custom-line3" />
+                  <hr class="custom-line4" />
+                  <hr class="custom-line5" />
+                  <hr class="custom-line6" />
+                  <hr class="custom-line7" />
+                  <hr class="custom-line8" />
+                  <hr class="custom-line9" />
+                  <hr class="custom-line10" />
+                  <hr class="custom-line11" />
+                  <hr class="custom-line12" />
+                  <hr class="custom-line13" />
+                  <hr class="custom-line14" />
+                  <hr class="custom-line15" />
+                  <hr class="custom-line16" />
+                  <hr class="custom-line17" />
+                  <hr class="custom-line18" />
+                  <hr class="custom-line19" />
+                  <hr class="custom-line20" />
+                  <hr class="custom-line21" />
+                  <hr class="custom-line22" />
+                  <hr class="custom-line23" />
+                  <hr class="custom-line24" />
+                  <div class="bongdenden">
+                    <div class="bongden1">
+                      <img
+                        id="lightbulb1"
+                        src="bongdenmo.png"
+                        alt="Bóng đèn bật"
+                        onclick="toggleLight('lightbulb1')"
+                      />
+                      <span>Office Room</span>
+                    </div>
+                    <div class="bongden2">
+                      <img
+                        id="lightbulb2"
+                        src="bongdenmo.png"
+                        alt="Bóng đèn bật"
+                        onclick="toggleLight('lightbulb2')"
+                      />
+                      <span>Kitchen</span>
+                    </div>
+                    <div class="bongden3">
+                      <img
+                        id="lightbulb3"
+                        src="bongdenmo.png"
+                        alt="Bóng đèn bật"
+                        onclick="toggleLight('lightbulb3')"
+                      />
+                      <span>Master room</span>
+                    </div>
+                    <div class="bongden4">
+                      <img
+                        id="lightbulb4"
+                        src="bongdenmo.png"
+                        alt="Bóng đèn bật"
+                        onclick="toggleLight('lightbulb4')"
+                      />
+                      <span>Living Room</span>
+                    </div>
+                    <div class="bongden5">
+                      <img
+                        id="lightbulb5"
+                        src="bongdenmo.png"
+                        alt="Bóng đèn bật"
+                        onclick="toggleLight('lightbulb5')"
+                      />
+                      <span>Bath Room</span>
+                    </div>
+                    <div class="bongden6">
+                      <img
+                        id="lightbulb6"
+                        src="bongdenmo.png"
+                        alt="Bóng đèn bật"
+                        onclick="toggleLight('lightbulb6')"
+                      />
+                      <span>Bed Room</span>
+                    </div>
+                    <div class="bongden7">
+                      <img
+                        id="lightbulb7"
+                        src="bongdenmo.png"
+                        alt="Bóng đèn bật"
+                        onclick="toggleLight('lightbulb7')"
+                      />
+                      <span>Bathroom</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="label">Living Room Temperature</div>
+                <div class="report">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100021675126285"
+                    >View Support</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="settings">
+            <div class="fan">
+              <h5><img src="fan-icon.png" id="Fan" /></h5>
+              <h5 class="fan-font">FAN</h5>
+              <div class="fan-options">
+                <img src="room1-icon.png" class="fan-option" id="Room1" />
+                <img src="room2-icon.png" class="fan-option" id="Room2" />
+                <img src="room3-icon.png" class="fan-option" id="Room3" />
+              </div>
+            </div>
+            <div class="cool">
+              <h5><img src="cool-icon.png" id="Cool" /></h5>
+              <h5 class="cool-font">COOL</h5>
+            </div>
+            <div class="heat">
+              <h5>
+                <img src="heat-icon.png" id="Heat" onclick="showTab(2, this)" />
+              </h5>
+              <h5 class="heat-font">HEAT</h5>
+            </div>
+            <div class="auto">
+              <h5><img src="auto-icon.png" id="Auto" onclick="showTab(9,this)"/></h5>
+              <h5 class="auto-font">AUTO</h5>
+            </div>
+            <div class="off">
+              <h5><img src="off-icon.png" id="Off" /></h5>
+              <h5 class="off-font">OFF</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- bed -->
+      <div id="content3" class="content">
+        <div class="device-container1">
+          <div id="air-conditioner1" class="device1">
+            <img src="./image/fanoff.png" id="fan1" />
+            <button type="button" id="btn9">On</button>
+            <button type="button" id="btn10">Off</button>
+            <h2>Air Conditioner</h2>
+          </div>
+          <div id="television1" class="device1">
+            <img src="./image/tvoff1.png" id="tv1" />
+            <button type="button" id="btn11">On</button>
+            <button type="button" id="btn12">Off</button>
+            <h2>Television</h2>
+          </div>
+          <div id="den" class="device1">
+            <img src="./image/denoff1.png" id="light1" />
+            <button type="button" id="btn13">On</button>
+            <button type="button" id="btn14">Off</button>
+            <h2>Light</h2>
+          </div>
+          <div id="door-lock1" class="device1">
+            <img src="./image/lock1.png" id="door1" />
+            <button type="button" id="btn15">Lock</button>
+            <button type="button" id="btn16">Unlock</button>
+            <h2>Door Lock</h2>
+          </div>
+          <div id="rem1" class="device1">
+            <img src="./image/curon1.png" id="curtain1" />
+            <button type="button" id="btn17">Close</button>
+            <button type="button" id="btn18">Open</button>
+            <h2>Curtain</h2>
+          </div>
+          <div id="cuaso1" class="device1">
+            <img src="./image/winof1.png" id="window1" />
+            <button type="button" id="btn19">Close</button>
+            <button type="button" id="btn20">Open</button>
+            <h2>Window</h2>
+          </div>
+
+          <div class="sensorbed">
+            <div id="nd1" class="thongsobed">
+              <img src="./image/nhietdo.png" id="nd1" />
+              <h2 id="Temperature">Temperature</h2>
+            </div>
+            <div id="da1" class="thongsobed">
+              <img src="./image/doam.png" id="da1" />
+              <h3 id="Humidity">Humidity</h3>
+            </div>
+            <div id="cl1" class="thongsobed">
+              <img src="./image/clkk.png" id="cl1" />
+              <h4 id="airquality">Air Quality</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- living -->
+      <div id="content4" class="content">
+        <div class="device-container2">
+          <div id="lockk2" class="device2">
+            <img src="./image/airof1.png" id="air2" />
+            <button type="button" id="btn21">On</button>
+            <button type="button" id="btn22">Off</button>
+            <h2>Air Filter</h2>
+          </div>
+          <div id="television2" class="device2">
+            <img src="./image/tvoff1.png" id="tv2" />
+            <button type="button" id="btn23">On</button>
+            <button type="button" id="btn24">Off</button>
+            <h2>Television</h2>
+          </div>
+          <div id="den2" class="device2">
+            <img src="./image/denoff1.png" id="light2" />
+            <button type="button" id="btn25">On</button>
+            <button type="button" id="btn26">Off</button>
+            <h2>Light</h2>
+          </div>
+          <div id="mayquat2" class="device2">
+            <img src="./image/quatof1.png" id="quat2" />
+            <button type="button" id="btn27">Off</button>
+            <button type="button" id="btn28">On</button>
+            <h2>Fan</h2>
+          </div>
+          <div id="rem2" class="device2">
+            <img src="./image/curon1.png" id="curtain2" />
+            <button type="button" id="btn29">Close</button>
+            <button type="button" id="btn30">Open</button>
+            <h2>Curtain</h2>
+          </div>
+          <div id="cuaso2" class="device2">
+            <img src="./image/winof1.png" id="window2" />
+            <button type="button" id="btn31">Close</button>
+            <button type="button" id="btn32">Open</button>
+            <h2>Window</h2>
+          </div>
+
+          <div class="sensorliv">
+            <div id="nd2" class="thongsoliv">
+              <img src="./image/nhietdo.png" id="nd2" />
+              <h2 id="temperature2">Temperature</h2>
+            </div>
+            <div id="da2" class="thongsoliv">
+              <img src="./image/doam.png" id="da2" />
+              <h3 id="humidity2">Humidity</h3>
+            </div>
+            <div id="cl2" class="thongsoliv">
+              <img src="./image/clkk.png" id="cl2" />
+              <h4 id="airquality2">Air Quality</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- kitchen-->
+      <div id="content5" class="content">
+        <div class="device-container3">
+          <div id="lockk3" class="device3">
+            <img src="./image/airof1.png" id="air3" />
+            <button type="button" id="btn33">On</button>
+            <button type="button" id="btn34">Off</button>
+            <h2>Air Filter</h2>
+          </div>
+          <div id="cleaner3" class="device3">
+            <img src="./image/buiof.png" id="clean3" />
+            <button type="button" id="btn35">On</button>
+            <button type="button" id="btn36">Off</button>
+            <h2>Vacuum Cleaner</h2>
+          </div>
+          <div id="den3" class="device3">
+            <img src="./image/denoff1.png" id="light3" />
+            <button type="button" id="btn37">On</button>
+            <button type="button" id="btn38">Off</button>
+            <h2>Light</h2>
+          </div>
+          <div id="mayquat3" class="device3">
+            <img src="./image/quatof1.png" id="quat3" />
+            <button type="button" id="btn39">Off</button>
+            <button type="button" id="btn40">On</button>
+            <h2>Fan</h2>
+          </div>
+          <div id="dishwasher3" class="device3">
+            <img src="./image/dishwasherof.png" id="dish3" />
+            <button type="button" id="btn41">Off</button>
+            <button type="button" id="btn42">On</button>
+            <h2>Dishwasher</h2>
+          </div>
+          <div id="tulanh3" class="device3">
+            <img src="./image/refof.png" id="ref3" />
+            <button type="button" id="btn43">Close</button>
+            <button type="button" id="btn44">Open</button>
+            <h2>Refrigerator</h2>
+          </div>
+
+          <div class="sensorkit">
+            <div id="nd3" class="thongsokit">
+              <img src="./image/nhietdo.png" id="nd3" />
+              <h2 id="temperature3">Temperature</h2>
+            </div>
+            <div id="da3" class="thongsokit">
+              <img src="./image/doam.png" id="da3" />
+              <h3 id="humidity3">Humidity</h3>
+            </div>
+            <div id="cl3" class="thongsokit">
+              <img src="./image/clkk.png" id="cl3" />
+              <h4 id="airquality3">Air Quality</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- phòng làm việc -->
+      <div id="content6" class="content">
+        <div class="device-container4">
+          <div id="air-conditioner4" class="device4">
+            <img src="./image/fanoff.png" id="fan4" />
+            <button type="button" id="btn45">On</button>
+            <button type="button" id="btn46">Off</button>
+            <h2>Air Conditioner</h2>
+          </div>
+          <div id="television4" class="device4">
+            <img src="./image/loaof.png" id="tv4" />
+            <button type="button" id="btn47">On</button>
+            <button type="button" id="btn48">Off</button>
+            <h2>Smart Speaker</h2>
+          </div>
+          <div id="den4" class="device4">
+            <img src="./image/denoff1.png" id="light4" />
+            <button type="button" id="btn49">On</button>
+            <button type="button" id="btn50">Off</button>
+            <h2>Light</h2>
+          </div>
+          <div id="door-lock4" class="device4">
+            <img src="./image/lock1.png" id="door4" />
+            <button type="button" id="btn51">Lock</button>
+            <button type="button" id="btn52">Unlock</button>
+            <h2>Door Lock</h2>
+          </div>
+          <div id="rem4" class="device4">
+            <img src="./image/curon1.png" id="curtain4" />
+            <button type="button" id="btn53">Close</button>
+            <button type="button" id="btn54">Open</button>
+            <h2>Curtain</h2>
+          </div>
+          <div id="cuaso4" class="device4">
+            <img src="./image/winof1.png" id="window4" />
+            <button type="button" id="btn55">Close</button>
+            <button type="button" id="btn56">Open</button>
+            <h2>Window</h2>
+          </div>
+
+          <div class="sensoroff">
+            <div id="nd4" class="thongsooff">
+              <img src="./image/nhietdo.png" id="nd4" />
+              <h2 id="temperature4">Temperature</h2>
+            </div>
+            <div id="da4" class="thongsooff">
+              <img src="./image/doam.png" id="da4" />
+              <h3 id="humidity4">Humidity</h3>
+            </div>
+            <div id="cl4" class="thongsooff">
+              <img src="./image/clkk.png" id="cl4" />
+              <h4 id="airquality4">Air Quality</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bathroom -->
+      <div id="content7" class="content">
+        <div class="device-container6">
+          <div id="den6" class="device6">
+            <img src="./image/denoff1.png" id="light6" />
+            <button type="button" id="btn57">On</button>
+            <button type="button" id="btn58">Off</button>
+            <h2>Light</h2>
+          </div>
+          <div id="maygiat6" class="device6">
+            <img src="./image/giatof.png" id="giat6" />
+            <button type="button" id="btn59">On</button>
+            <button type="button" id="btn60">Off</button>
+            <h2>Washing Machine</h2>
+          </div>
+          <div id="toilet6" class="device6">
+            <img src="./image/toiletoff.png" id="toil6" />
+            <button type="button" id="btn61">On</button>
+            <button type="button" id="btn62">Off</button>
+            <h2>Toilet</h2>
+          </div>
+          <div id="bontam6" class="device6">
+            <img src="./image/bathtubeof.png" id="bathtub6" />
+            <button type="button" id="btn63">On</button>
+            <button type="button" id="btn64">Off</button>
+            <h2>Bathtub</h2>
+          </div>
+
+          <div class="sensorbat">
+            <div id="nd6" class="thongsobat">
+              <img src="./image/nhietdo.png" id="nd6" />
+              <h2 id="temperature6">Temperature</h2>
+            </div>
+            <div id="da6" class="thongsobat">
+              <img src="./image/doam.png" id="da6" />
+              <h3 id="humidity6">Humidity</h3>
+            </div>
+            <div id="cl6" class="thongsobat">
+              <img src="./image/clkk.png" id="cl6" />
+              <h4 id="airquality6">Air Quality</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- phòng master -->
+      <div id="content8" class="content">
+        <div class="device-container5">
+          <div id="air-conditioner5" class="device5">
+            <img src="./image/fanoff.png" id="fan5" />
+            <button type="button" id="btn65">On</button>
+            <button type="button" id="btn66">Off</button>
+            <h2>Air Conditioner</h2>
+          </div>
+          <div id="television5" class="device5">
+            <img src="./image/tvoff1.png" id="tv5" />
+            <button type="button" id="btn67">On</button>
+            <button type="button" id="btn68">Off</button>
+            <h2>Television</h2>
+          </div>
+          <div id="den5" class="device5">
+            <img src="./image/denoff1.png" id="light5" />
+            <button type="button" id="btn69">On</button>
+            <button type="button" id="btn70">Off</button>
+            <h2>Light</h2>
+          </div>
+          <div id="door-lock5" class="device5">
+            <img src="./image/lock1.png" id="door5" />
+            <button type="button" id="btn71">Lock</button>
+            <button type="button" id="btn72">Unlock</button>
+            <h2>Door Lock</h2>
+          </div>
+          <div id="rem5" class="device5">
+            <img src="./image/curon1.png" id="curtain5" />
+            <button type="button" id="btn73">Close</button>
+            <button type="button" id="btn74">Open</button>
+            <h2>Curtain</h2>
+          </div>
+          <div id="cuaso5" class="device5">
+            <img src="./image/winof1.png" id="window5" />
+            <button type="button" id="btn75">Close</button>
+            <button type="button" id="btn76">Open</button>
+            <h2>Window</h2>
+          </div>
+          <!-- <div id="cleaner5" class="device5">
+                    <img src="./image/buiof.png" id="clean5">
+                    <button type="button" id="btn61">On</button>
+                    <button type="button" id="btn62">Off</button>
+                    <h2>Vacuum Cleaner</h2>
+                </div>
+                <div id="lockk5" class="device5">
+                    <img src="./image/airof1.png" id="air5">
+                    <button type="button" id="btn63">On</button>
+                    <button type="button" id="btn64">Off</button>
+                    <h2>Air Filter</h2>
+                </div> -->
+
+          <div class="sensormas">
+            <div id="nd5" class="thongsomas">
+              <img src="./image/nhietdo.png" id="nd5" />
+              <h2 id="temperature5">Temperature</h2>
+            </div>
+            <div id="da5" class="thongsomas">
+              <img src="./image/doam.png" id="da5" />
+              <h3 id="humidity5">Humidity</h3>
+            </div>
+            <div id="cl5" class="thongsomas">
+              <img src="./image/clkk.png" id="cl5" />
+              <h4 id="airquality5">Air Quality</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="content9" class="content">
+        <div class="chart-container" id="sensor-chart-container">
+            <div class="section-title">Biểu đồ</div>
+            <canvas id="sensor-chart" style="width: 780px; height: 550px;"></canvas>
+        </div>
+    </div>
+    </div>
+
+    <script src="function.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <script>
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDgYvOC4lhASuChiwvywauGskuCK8DUUUs",
+        authDomain: "pham-thai-son.firebaseapp.com",
+        databaseURL: "https://pham-thai-son-default-rtdb.firebaseio.com",
+        projectId: "pham-thai-son",
+        storageBucket: "pham-thai-son.appspot.com",
+        messagingSenderId: "899085834953",
+        appId: "1:899085834953:web:d69078e2c6cbfb53864b18",
+        measurementId: "G-DVN84CM98Q",
+      };
+      // initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      const temperatureRef = firebase.database().ref("temperature");
+      ////////////////////////////////////////////////////// LIÊN KẾT FIREBASE ///////////////////////////////////////////////////////
+      // Function to update the gauge
+      function updateGauge(temperature) {
+        const gauge = document.getElementById("gauge");
+        const tempSpan = document.getElementById("temperature");
+        tempSpan.textContent = `${temperature}°C`;
+        // Cập nhật nền gauge dựa trên nhiệt độ
+        gauge.style.background = `conic-gradient(#f3aac6 0% ${temperature}%, #f8a3d3 ${temperature}% 100%)`;
+      }
+
+      // Lấy dữ liệu nhiệt độ từ Firebase
+      temperatureRef.on("value", (snapshot) => {
+        const temperature = snapshot.val();
+        updateGauge(temperature);
+      });
+      function toggleLight(lightId) {
+        const lightbulb = document.getElementById(lightId);
+        const isOn = lightbulb.src.includes("bongdenmo.png");
+        const newSrc = isOn ? "bongdentat.png" : "bongdenmo.png";
+        lightbulb.src = newSrc;
+
+        // Cập nhật trạng thái đèn trong Firebase
+        const status = isOn ? 0 : 1;
+        firebase
+          .database()
+          .ref("lights/" + lightId)
+          .set(status);
+      }
+
+      // Lắng nghe thay đổi từ Firebase và cập nhật giao diện người dùng
+      firebase
+        .database()
+        .ref("lights")
+        .on("value", (snapshot) => {
+          const lights = snapshot.val();
+          for (const lightId in lights) {
+            const status = lights[lightId];
+            const lightbulb = document.getElementById(lightId);
+            if (lightbulb) {
+              lightbulb.src = status === 1 ? "bongdenmo.png" : "bongdentat.png";
+            }
+          }
+        });
+      //////// đèn living room /////////
+      function toggleLightt(lightId) {
+        const lightbulb = document.getElementById(lightId);
+        const isOn = lightbulb.src.includes("bongdenmo.png");
+        const newSrc = isOn ? "bongdentat.png" : "bongdenmo.png";
+        lightbulb.src = newSrc;
+
+        // Cập nhật trạng thái đèn trong Firebase
+        const status = isOn ? 0 : 1;
+        firebase
+          .database()
+          .ref("lights/" + lightId)
+          .set(status);
+      }
+
+      // Lắng nghe thay đổi từ Firebase và cập nhật giao diện người dùng
+      firebase
+        .database()
+        .ref("lights")
+        .on("value", (snapshot) => {
+          const lights = snapshot.val();
+          for (const lightId in lights) {
+            const status = lights[lightId];
+            const lightbulb = document.getElementById(lightId);
+            if (lightbulb) {
+              lightbulb.src = status === 1 ? "bongdenmo.png" : "bongdentat.png";
+            }
+          }
+        });
+      ///////// biểu đồ ////////////////////////////////////////
+      // Lắng nghe thay đổi từ Firebase và cập nhật biểu đồ
+      firebase
+        .database()
+        .ref("temperatureData")
+        .on("value", (snapshot) => {
+          const data = snapshot.val();
+          if (data) {
+            const labels = [];
+            const temperatures = [];
+
+            for (const time in data) {
+              labels.push(time);
+              temperatures.push(data[time]);
+            }
+
+            // Cập nhật dữ liệu biểu đồ
+            temperatureChart.data.labels = labels;
+            temperatureChart.data.datasets.data = temperatures;
+            temperatureChart.update();
+          } else {
+            console.error("Không có dữ liệu trong Firebase.");
+          }
+        });
+
+      firebase
+        .database()
+        .ref("temperatureData")
+        .set(temperatureData)
+        .then(() => {
+          console.log("Dữ liệu nhiệt độ đã được cập nhật thành công!");
+        })
+        .catch((error) => {
+          console.error("Lỗi khi cập nhật dữ liệu nhiệt độ: ", error);
+        });
+    </script>
+    <!------------------------------------------GIẤU CÁC TAB------------------------------------------------------------->
+    <script>
+      function showTab(n) {
+        // Ẩn tất cả các tab
+        var i;
+        var x = document.getElementsByClassName("content");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+
+        // Hiển thị tab được chọn
+        document.getElementById("content" + n).style.display = "block";
+      }
+    </script>
+
+    <!-- firebase sensor -->
+
+    <script>
+      //bed
+      var nhietDo_bed = document.querySelector(".sensorbed #Temperature");
+      var doAm_bed = document.querySelector(".sensorbed #Humidity");
+      var chatLuong_bed = document.querySelector(".sensorbed #airquality");
+
+      //living
+      var nhietDo_liv = document.querySelector(".sensorliv #temperature2");
+      var doAm_liv = document.querySelector(".sensorliv #humidity2");
+      var chatLuong_liv = document.querySelector(".sensorliv #airquality2");
+
+      //kitchen
+      var nhietDo_kit = document.querySelector(".sensorkit #temperature3");
+      var doAm_kit = document.querySelector(".sensorkit #humidity3");
+      var chatLuong_kit = document.querySelector(".sensorkit #airquality3");
+
+      //office
+      var nhietDo_off = document.querySelector(".sensoroff #temperature4");
+      var doAm_off = document.querySelector(".sensoroff #humidity4");
+      var chatLuong_off = document.querySelector(".sensoroff #airquality4");
+
+      //master
+      var nhietDo_mas = document.querySelector(".sensormas #temperature5");
+      var doAm_mas = document.querySelector(".sensormas #humidity5");
+      var chatLuong_mas = document.querySelector(".sensormas #airquality5");
+
+      //bathroom
+      var nhietDo_bat = document.querySelector(".sensorbat #temperature6");
+      var doAm_bat = document.querySelector(".sensorbat #humidity6");
+      var chatLuong_bat = document.querySelector(".sensorbat #airquality6");
+
+      function displaySensorsBed() {
+        let dbRef = firebase.database().ref("bedroom").child("temperature");
+        dbRef.on("value", (snap) => {
+          nhietDo_bed.innerHTML = `Temperature: ${snap.val()}°C`;
+          console.log(snap.val());
+        });
+
+        let dbRef2 = firebase.database().ref("bedroom").child("humidity");
+        dbRef2.on("value", (snap) => {
+          doAm_bed.innerHTML = `Humidity: ${snap.val()}%`;
+          console.log(snap.val());
+        });
+
+        let dbRef3 = firebase.database().ref("bedroom").child("airquality");
+        dbRef3.on("value", (snap) => {
+          chatLuong_bed.innerHTML = `Air Quality: ${snap.val()}`;
+          console.log(snap.val());
+        });
+      }
+
+      function displaySensorsLiving() {
+        let dbRef4 = firebase
+          .database()
+          .ref("livingroom")
+          .child("temperature2");
+        dbRef4.on("value", (snap) => {
+          nhietDo_liv.innerHTML = `Temperature: ${snap.val()}°C`;
+          console.log(snap.val());
+        });
+
+        let dbRef5 = firebase.database().ref("livingroom").child("humidity2");
+        dbRef5.on("value", (snap) => {
+          doAm_liv.innerHTML = `Humidity: ${snap.val()}%`;
+          console.log(snap.val());
+        });
+
+        let dbRef6 = firebase.database().ref("livingroom").child("airquality2");
+        dbRef6.on("value", (snap) => {
+          chatLuong_liv.innerHTML = `Air Quality: ${snap.val()}`;
+          console.log(snap.val());
+        });
+      }
+
+      function displaySensorsKitchen() {
+        let dbRef7 = firebase.database().ref("kitchen").child("temperature3");
+        dbRef7.on("value", (snap) => {
+          nhietDo_kit.innerHTML = `Temperature: ${snap.val()}°C`;
+          console.log(snap.val());
+        });
+
+        let dbRef8 = firebase.database().ref("kitchen").child("humidity3");
+        dbRef8.on("value", (snap) => {
+          doAm_kit.innerHTML = `Humidity: ${snap.val()}%`;
+          console.log(snap.val());
+        });
+
+        let dbRef9 = firebase.database().ref("kitchen").child("airquality3");
+        dbRef9.on("value", (snap) => {
+          chatLuong_kit.innerHTML = `Air Quality: ${snap.val()}`;
+          console.log(snap.val());
+        });
+      }
+
+      function displaySensorsOffice() {
+        let dbRef10 = firebase.database().ref("office").child("temperature4");
+        dbRef10.on("value", (snap) => {
+          nhietDo_off.innerHTML = `Temperature: ${snap.val()}°C`;
+          console.log(snap.val());
+        });
+
+        let dbRef11 = firebase.database().ref("office").child("humidity4");
+        dbRef11.on("value", (snap) => {
+          doAm_off.innerHTML = `Humidity: ${snap.val()}%`;
+          console.log(snap.val());
+        });
+
+        let dbRef12 = firebase.database().ref("office").child("airquality4");
+        dbRef12.on("value", (snap) => {
+          chatLuong_off.innerHTML = `Air Quality: ${snap.val()}`;
+          console.log(snap.val());
+        });
+      }
+
+      function displaySensorsMaster() {
+        let dbRef13 = firebase
+          .database()
+          .ref("masterroom")
+          .child("temperature5");
+        dbRef13.on("value", (snap) => {
+          nhietDo_mas.innerHTML = `Temperature: ${snap.val()}°C`;
+          console.log(snap.val());
+        });
+
+        let dbRef14 = firebase.database().ref("masterroom").child("humidity5");
+        dbRef14.on("value", (snap) => {
+          doAm_mas.innerHTML = `Humidity: ${snap.val()}%`;
+          console.log(snap.val());
+        });
+
+        let dbRef15 = firebase
+          .database()
+          .ref("masterroom")
+          .child("airquality5");
+        dbRef15.on("value", (snap) => {
+          chatLuong_mas.innerHTML = `Air Quality: ${snap.val()}`;
+          console.log(snap.val());
+        });
+      }
+
+      function displaySensorsBath() {
+        let dbRef16 = firebase.database().ref("bathroom").child("temperature6");
+        dbRef16.on("value", (snap) => {
+          nhietDo_bat.innerHTML = `Temperature: ${snap.val()}°C`;
+          console.log(snap.val());
+        });
+
+        let dbRef17 = firebase.database().ref("bathroom").child("humidity6");
+        dbRef17.on("value", (snap) => {
+          doAm_bat.innerHTML = `Humidity: ${snap.val()}%`;
+          console.log(snap.val());
+        });
+
+        let dbRef18 = firebase.database().ref("bathroom").child("airquality6");
+        dbRef18.on("value", (snap) => {
+          chatLuong_bat.innerHTML = `Air Quality: ${snap.val()}`;
+          console.log(snap.val());
+        });
+      }
+
+      setInterval(displaySensorsBed, 5000);
+      setInterval(displaySensorsLiving, 5000);
+      setInterval(displaySensorsKitchen, 5000);
+      setInterval(displaySensorsOffice, 5000);
+      setInterval(displaySensorsMaster, 5000);
+      setInterval(displaySensorsBath, 5000);
+      
+
+
+
+      if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+} else {
+    firebase.app();
+}
+const database = firebase.database();
+
+// Tạo biểu đồ
+const ctx = document.getElementById('sensor-chart').getContext('2d');
+const sensorChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['0h', '4h', '8h', '12h', '16h', '20h', '24h'], // Các mốc thời gian cố định
+        datasets: [
+            {
+                label: 'Nhiệt độ (°C)',
+                data: [null, null, null, null, null, null, null], // Không gian dữ liệu nhiệt độ
+                borderColor: 'red',
+                backgroundColor: 'rgba(255, 0, 0, 0.1)',
+                yAxisID: 'y',
+            },
+            {
+                label: 'Độ ẩm (%)',
+                data: [null, null, null, null, null, null, null], // Không gian dữ liệu độ ẩm
+                borderColor: 'blue',
+                backgroundColor: 'rgba(0, 0, 255, 0.1)',
+                yAxisID: 'y1',
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                type: 'linear',
+                position: 'left',
+                title: {
+                    display: true,
+                    text: 'Nhiệt độ (°C)',
+                },
+            },
+            y1: {
+                type: 'linear',
+                position: 'right',
+                title: {
+                    display: true,
+                    text: 'Độ ẩm (%)',
+                },
+                grid: {
+                    drawOnChartArea: false, // Tránh vẽ lưới của độ ẩm lên vùng của nhiệt độ
+                },
+            }
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: 'Nhiệt độ và Độ ẩm theo Thời gian',
+            },
+        },
+    },
+});
+
+// Lắng nghe thay đổi dữ liệu nhiệt độ từ Firebase và cập nhật biểu đồ
+const tempRef = database.ref('sensor-data/temperature');
+tempRef.on('value', (snapshot) => {
+    const temperatureData = snapshot.val();
+    const updatedTemperatureData = [];
+
+    sensorChart.data.labels.forEach((label) => {
+        updatedTemperatureData.push(temperatureData[label] || null);
+    });
+
+    // Cập nhật dữ liệu nhiệt độ trong biểu đồ
+    sensorChart.data.datasets[0].data = updatedTemperatureData;
+    sensorChart.update();
+});
+
+// Lắng nghe thay đổi dữ liệu độ ẩm từ Firebase và cập nhật biểu đồ
+const humidityRef = database.ref('sensor-data/humidity');
+humidityRef.on('value', (snapshot) => {
+    const humidityData = snapshot.val();
+    const updatedHumidityData = [];
+
+    sensorChart.data.labels.forEach((label) => {
+        updatedHumidityData.push(humidityData[label] || null);
+    });
+
+    // Cập nhật dữ liệu độ ẩm trong biểu đồ
+    sensorChart.data.datasets[1].data = updatedHumidityData;
+    sensorChart.update();
+}); 
+
+
+    </script>
+  </body>
+</html>
